@@ -1,0 +1,9 @@
+[submodule "module-1/bloom-fi"]
+	path = module-1/bloom-fi
+	url = git@github.com:dev-gaitano/bloom-fi.git
+[submodule "module-1/ona"]
+	path = module-1/ona
+	url = git@github.com:dev-gaitano/ona.git
+[submodule "module-1/event-hub"]
+	path = module-1/event-hub
+	url = git@github.com:dev-gaitano/event-hub.git
