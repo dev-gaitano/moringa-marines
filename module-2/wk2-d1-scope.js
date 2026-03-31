@@ -45,36 +45,44 @@ const poorOperatorUse = !x == y; // (!x) == y; -> false == "9"; -> false
 // (Nested) Calculates player bonus based on score (score > 50 = score * 0.1)
 // Returns player info
 
-playerData = ["Hugo Ekitike", 10, 1] // playerData = [name, score, activity]
-
-function playerStatsChecker(playerScore, playerActivity) {
-  // Calculate bonus function
-  const calculateBonus = (score) => {
-    if (score >= 50) {
-      return score * 0.1
-    } else {
-      return score * 0.05
-    }
-  }
-
+const playerStatsChecker = (score, activity) => {
   // Check if player has a valid score
-  if (!playerScore) {
-    console.log("Oops! Player score is not valid (0)")
-    return 0
+  if (!score) {
+    return false
   } else {
     // Check if player is active
-    if (playerActivity === 1) {
-      console.log("Player score is valid and player is active!")
-      return calculateBonus(playerScore)
-    } else if (playerActivity === 0) {
-      console.log("Oops! Player is not active")
-      return 0
+    if (activity === 1) {
+      return true
+    } else if (activity === 0) {
+      return false
     }
   }
 }
 
-// Log player info to console
-console.log(`Name: ${playerData[0]}`)
-console.log(`Score: ${playerData[1]}`)
-console.log(`Activity: ${playerData[2]}`)
-console.log(`Bonus: ${playerStatsChecker(playerData[1], playerData[2])}`)
+// Calculate bonus function
+const calculateBonus = (score) => {
+  if (score >= 50) {
+    return score * 0.1
+  } else {
+    return score * 0.05
+  }
+}
+
+// Main application function
+function main() {
+  playerData = ["Hugo Ekitike", 10, 1] // playerData = [name, score, activity]
+
+  if (playerStatsChecker(playerData[1], playerData[2])) {
+    // Log player info to console
+    console.log(`Name: ${playerData[0]}`)
+    console.log(`Score: ${playerData[1]}`)
+    console.log(`Activity: ${playerData[2]}`)
+    console.log(`Bonus: ${calculateBonus(playerData[1])}`)
+    return calculateBonus(playerData[1])
+  } else {
+    console.log("Oops! Score invalid or player inactive")
+    return 0
+  }
+}
+
+main()
