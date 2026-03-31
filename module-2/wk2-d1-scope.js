@@ -45,7 +45,7 @@ const poorOperatorUse = !x == y; // (!x) == y; -> false == "9"; -> false
 // (Nested) Calculates player bonus based on score (score > 50 = score * 0.1)
 // Returns player info
 
-const playerStatsChecker = (score, activity) => {
+const validatePlayer = (score, activity) => {
   // Check if player has a valid score
   if (!score) {
     return false
@@ -70,9 +70,9 @@ const calculateBonus = (score) => {
 
 // Main application function
 function main() {
-  playerData = ["Hugo Ekitike", 10, 1] // playerData = [name, score, activity]
+  const playerData = ["Hugo Ekitike", 10, 1] // playerData = [name, score, activity]
 
-  if (playerStatsChecker(playerData[1], playerData[2])) {
+  if (validatePlayer(playerData[1], playerData[2])) {
     // Log player info to console
     console.log(`Name: ${playerData[0]}`)
     console.log(`Score: ${playerData[1]}`)
