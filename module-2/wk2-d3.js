@@ -11,7 +11,17 @@ rawScores.pop()
 const cleanedScores = rawScores;
 
 // Filter scores
-const filteredScores = cleanedScores.filter(n => n >= 75);
+//const filteredScores = cleanedScores.filter(n => n >= 75);
+
+function filterCriteria(n) {
+  if (n >= 75) {
+    return true
+  }
+
+  return false
+}
+
+const filteredScores = cleanedScores.filter(filterCriteria);
 
 // Sort scores
 const sortedScores = filteredScores.sort((a, b) => b - a);
