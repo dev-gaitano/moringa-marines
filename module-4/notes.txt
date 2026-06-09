@@ -1,0 +1,21 @@
+class Student(name, cohort)
+class Cohort(name, assigned_tm())
+class Tm(name, cohort)
+
+class Enrollment(student_id, cohort_id)
+
+1 student has 1 cohort
+1 cohort has many students
+
+1 to many relationship between student and cohort
+
+1 cohort has many TMs
+1 TM has one cohort
+
+1 to many relationship between cohort and TM
+
+1 student has many TMs
+1 TM has many students
+
+A many to many relationship between Students and TMs
+This relationship is imposed by the Enrollment class(intermediary/join class)
